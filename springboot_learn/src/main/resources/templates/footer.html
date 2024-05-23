@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <footer th:fragment="copyright1">
+        &copy;2023-2024--1
+    </footer>
+    <footer th:fragment="copyright2" th:text="${article.content}">
+        &copy;2023-2024--2
+    </footer>
+</body>
+</html>

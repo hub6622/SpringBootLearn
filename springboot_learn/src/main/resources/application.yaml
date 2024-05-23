@@ -1,0 +1,16 @@
+#spring:
+#  application:
+#    name: springboot_learn
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#      url:mysql://localhost:3306/springbootdata?serverTimezone=UTC&useSSL=true&useUnicode=true&characterEncoding=UTF-8
+#      username:root
+#      password:root
+    #spring.datasource.username=root
+    #spring.datasource.password=root
+
+#mybatis:
+#  config-location: classpath:mybatis-config.xml
+#  mapper-locations: classpath:com/example/springboot_learn/mapper/*.xml
+#  configuration:
+#    map-underscore-to-camel-case: true

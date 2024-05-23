@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>后台登录</title>
+    <link rel="stylesheet" th:href="@{/login/css/signin.css}">
+    <link rel="stylesheet" th:href="@{/login/css/bootstrap.min.css}">
+    <script>
+        function jumpToBeauty(){
+            // alert("666");
+            location.replace("beauty.html");
+            // console(window.location.href="beauty.html");
+        }
+    </script>
+</head>
+<body class="text-center">
+    <form class="form-signin">
+        <img onclick="jumpToBeauty()" class="mb-4" width="100" height="100" th:src="#{img}">
+        <h1 class="h3 mb-3 font-weight-normal" th:text="#{login.tip}">请登录</h1>
+        <input class="form-control" type="text" th:placeholder="#{login.username}">
+        <input class="form-control" type="password" th:placeholder="#{login.Password}">
+        <input type="checkbox"><span th:text="#{login.rememberMe}"></span>
+        <button type="submit" class="btn btn-lg btn-primary btn-block" th:text="#{login.button}">登录</button>
+        <p class="mt-5 mb-3 text-muted" th:replace="~{footer::copyright2}"></p>
+        <a th:href="@{/login(l='zh_CN')}">中文</a> <a th:href="@{/login(l='en_US')}">英文</a>
+        <!--    <div>-->
+        <!--        <p th:text="*{article.content}"></p>-->
+        <!--        <p th:text="${article.title}"></p>-->
+        <!--    </div>-->
+        <!--    <div th:text="#{aa.username}">-->
+
+        <!--    </div>-->
+
+    </form>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot_learn.mapper.ArticleMapper">
+    <resultMap id="ac" type="com.example.springboot_learn.pojo.Article">
+        <id property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="content" column="content"/>
+        <collection property="commentList" ofType="com.example.springboot_learn.pojo.Comment">
+            <id property="id" column="cid"/>
+            <result property="content" column="c_content"/>
+            <result property="author" column="author"/>
+            <result property="a_id" column="a_id"/>
+        </collection>
+    </resultMap>
+    <select id="findAll" resultMap="ac">
+        select ta.*,tc.id cid, tc.content c_content,tc.author,tc.a_id
+        from t_article ta, t_comment tc
+        where ta.id = tc.a_id
+    </select>
+
+</mapper>

@@ -1,0 +1,397 @@
+{
+	"info": {
+		"_postman_id": "305b3504-1289-4943-9a66-bd086fc3e9cc",
+		"name": "SpringMvcDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "商品模块",
+			"item": [
+				{
+					"name": "根据id获取书本",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6666/books/2",
+							"host": [
+								"localhost"
+							],
+							"port": "6666",
+							"path": [
+								"books",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取全部书本",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:6666/books",
+							"host": [
+								"localhost"
+							],
+							"port": "6666",
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:6666/books/bookName=ppgGood/bookCode=0000",
+							"host": [
+								"localhost"
+							],
+							"port": "6666",
+							"path": [
+								"books",
+								"bookName=ppgGood",
+								"bookCode=0000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增book1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookName\":\"ppg666\",\r\n    \"bookCode\":\"60000\",\r\n    \"bookAuthor\":\"dcc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6666/books",
+							"host": [
+								"localhost"
+							],
+							"port": "6666",
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "删除book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:6666/books/7",
+							"host": [
+								"localhost"
+							],
+							"port": "6666",
+							"path": [
+								"books",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "修改book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\":7,\r\n    \"bookName\":\"ppg777\",\r\n    \"bookCode\":\"6220\",\r\n    \"bookAuthor\":\"dcc666\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6666/books/update",
+							"host": [
+								"localhost"
+							],
+							"port": "6666",
+							"path": [
+								"books",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "用户管理",
+			"item": [
+				{
+					"name": "首页save模块",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:6666/index/save?name=中文&password=123456",
+							"host": [
+								"localhost"
+							],
+							"port": "6666",
+							"path": [
+								"index",
+								"save"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "中文"
+								},
+								{
+									"key": "password",
+									"value": "123456"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "xjl",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:6666/index/save?name=kkkk&password=123456",
+							"host": [
+								"localhost"
+							],
+							"port": "6666",
+							"path": [
+								"index",
+								"save"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "kkkk"
+								},
+								{
+									"key": "password",
+									"value": "123456"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "usersave",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:6666/user/usersave?username=中文&age=123456&gender=男",
+							"host": [
+								"localhost"
+							],
+							"port": "6666",
+							"path": [
+								"user",
+								"usersave"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "中文"
+								},
+								{
+									"key": "age",
+									"value": "123456"
+								},
+								{
+									"key": "gender",
+									"value": "男"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "usersave1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:6666/user/usersave1?name=中文&name=123456&name=男",
+							"host": [
+								"localhost"
+							],
+							"port": "6666",
+							"path": [
+								"user",
+								"usersave1"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "中文"
+								},
+								{
+									"key": "name",
+									"value": "123456"
+								},
+								{
+									"key": "name",
+									"value": "男"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "usersave2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:6666/user/usersave2?name=中文&age=123456&sex=男&name=666&name=我那个娃是否",
+							"host": [
+								"localhost"
+							],
+							"port": "6666",
+							"path": [
+								"user",
+								"usersave2"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "中文"
+								},
+								{
+									"key": "age",
+									"value": "123456"
+								},
+								{
+									"key": "sex",
+									"value": "男"
+								},
+								{
+									"key": "name",
+									"value": "666"
+								},
+								{
+									"key": "name",
+									"value": "我那个娃是否"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "indexSave",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"bbc\",\r\n    \"gender\":\"man\",\r\n    \"age\":11,\r\n    \"address\":{\r\n        \"city\":\"666\",\r\n        \"street\":\"fwa\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6666/index/indexSave",
+							"host": [
+								"localhost"
+							],
+							"port": "6666",
+							"path": [
+								"index",
+								"indexSave"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "indexSaveJson",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"bbc\",\r\n    \"gender\":\"man\",\r\n    \"age\":11,\r\n    \"address\":[123,456,789]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6666/index/indexSaveJson",
+							"host": [
+								"localhost"
+							],
+							"port": "6666",
+							"path": [
+								"index",
+								"indexSaveJson"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "登录模块",
+			"item": []
+		}
+	]
+}

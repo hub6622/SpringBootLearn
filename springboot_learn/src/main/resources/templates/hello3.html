@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        body{
+            color: black;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div th:text="${articleList.size()==2 ? '两':'不是两'}+'篇文章'"></div>
+    <p th:text="${wel1}"></p>
+    <p th:utext="${wel}"></p>
+    <p>[[${wel1}]]</p>
+    <p>[[${wel}]]</p>
+    <input th:value="${wel1}">
+    <br>
+    <br>
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>content</th>
+            <th>commitment</th>
+        </tr>
+        <tr th:each="art,stat:${articleList}">
+            <td th:text="${art.id}"></td>
+            <td th:text="${art.title}"></td>
+            <td th:text="${art.content}"></td>
+            <td>
+                <span  th:each="com,stat:${art.commentList}">
+                    <span th:text="${com.content}"></span>
+                </span>
+            </td>
+            <td th:text="${stat.even}"></td>
+            <td th:text="${stat.odd}"></td>
+            <td th:text="${stat.current}"></td>
+            <td th:text="${stat.first}"></td>
+            <td th:text="${stat.last}"></td>
+            <td th:text="${stat.size}"></td>
+            <td th:text="${stat.index}"></td>
+            <td th:text="${stat.count}"></td>
+        </tr>
+    </table>
+    <div th:switch="${articleList.size()+1}">
+        <p th:case="1">一篇文章</p>
+        <p th:case="2">二篇文章</p>
+        <p th:case="3">三篇文章</p>
+        <p th:case="4">多篇文章</p>
+    </div>
+</body>
+</html>

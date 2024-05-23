@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Article</title>
+    <style>
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <table border="2" align="center">
+        <p align="center">articleList</p>
+        <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>content</th>
+            <th>comment</th>
+        </tr>
+        <tr th:each="art,stat:${articleList}">
+            <td th:text="${art.id}"></td>
+            <td th:text="${art.title}"></td>
+            <td th:text="${art.content}"></td>
+            <td>
+                <span  th:each="com,stat:${art.commentList}">
+                    <span th:text="${com.content}"></span>
+                </span>
+            </td>
+<!--            <td th:text="${art.commentList.content}"></td>-->
+        </tr>
+    </table>
+    <a href="beauty.html">AD 点我看美女</a>
+</body>
+</html>
