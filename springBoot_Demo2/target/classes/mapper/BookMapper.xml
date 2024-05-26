@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="ppg.demo.mapper.BookMapper">
+    <insert id="insertBook" parameterType="Book">
+        insert into t_book values (null,#{bookName},#{bookAuthor},#{bookCode})
+    </insert>
+
+</mapper>
