@@ -6,10 +6,6 @@ import ppg.demo.pojo.Book;
 import ppg.demo.pojo.Result;
 import ppg.demo.service.BookService;
 
-/**
- * @Author: 肖奕杰
- * @Date: 2024/5/20 22:05
- **/
 @RestController
 @RequestMapping("/book")
 public class bookController {

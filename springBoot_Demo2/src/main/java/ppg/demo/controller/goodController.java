@@ -3,9 +3,13 @@ package ppg.demo.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import ppg.demo.pojo.Result;
 import ppg.demo.pojo.User;
 import ppg.demo.service.UserService;
+import java.io.File;
+import java.io.IOException;
+
 @Controller
 public class goodController {
     @Autowired
@@ -43,4 +47,24 @@ public class goodController {
         System.out.println("dcc=====");
         return "/dcc6";
     }
+
+    @PostMapping("/upload")
+    @ResponseBody
+    public Result upload(@RequestParam("file") MultipartFile file){
+        if (file.isEmpty()) {
+            return new Result("1", "not select file", null);
+        }
+        try{
+            byte[] bytes = file.getBytes();
+            String uploadDir = "D:\\";
+            File uploadFile = new File(uploadDir + file.getOriginalFilename());
+            file.transferTo(uploadFile);
+            return new Result("200","succeed",file.getOriginalFilename());
+        }catch (IOException e){
+            e.printStackTrace();
+            return new Result("500","fail",null);
+        }
+    }
+
+
 }

@@ -7,10 +7,6 @@ import ppg.demo.pojo.Book;
 import ppg.demo.service.BookService;
 import java.util.List;
 
-/**
- * @Author: 肖奕杰
- * @Date: 2024/5/6 13:21
- **/
 @Service
 public class BookServiceImpl implements BookService {
     @Autowired

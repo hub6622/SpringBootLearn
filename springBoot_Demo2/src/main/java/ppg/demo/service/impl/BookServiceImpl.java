@@ -8,10 +8,7 @@ import ppg.demo.service.BookService;
 
 import java.util.List;
 
-/**
- * @Author: 肖奕杰
- * @Date: 2024/5/20 22:09
- **/
+
 @Service
 public class BookServiceImpl implements BookService {
     @Autowired

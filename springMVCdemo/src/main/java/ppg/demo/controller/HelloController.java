@@ -5,10 +5,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ppg.demo.pojo.User;
 
-/**
- * @Author: 肖奕杰
- * @Date: 2024/4/18 17:12
- **/
 
 @RestController
 public class HelloController {

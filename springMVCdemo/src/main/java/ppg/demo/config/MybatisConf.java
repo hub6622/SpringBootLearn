@@ -6,10 +6,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import javax.sql.DataSource;
 
-/**
- * @Author: 肖奕杰
- * @Date: 2024/5/6 12:58
- **/
 @Configuration
 public class MybatisConf {
     @Bean

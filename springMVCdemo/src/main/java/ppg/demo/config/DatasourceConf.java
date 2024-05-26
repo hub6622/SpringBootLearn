@@ -9,10 +9,6 @@ import org.springframework.context.annotation.PropertySource;
 
 import javax.sql.DataSource;
 
-/**
- * @Author: 肖奕杰
- * @Date: 2024/5/6 12:47
- **/
 @Configuration
 @PropertySource("classpath:jdbc.properties")
 public class DatasourceConf {

@@ -4,10 +4,6 @@ import org.apache.ibatis.annotations.*;
 import ppg.demo.pojo.Book;
 import java.util.List;
 
-/**
- * @Author: 肖奕杰
- * @Date: 2024/5/6 13:24
- **/
 @Mapper
 public interface BookMapper {
     @Select("select * from p_book")
