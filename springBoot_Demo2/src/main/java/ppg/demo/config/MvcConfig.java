@@ -15,11 +15,13 @@ public class MvcConfig implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("abc5").setViewName("abc");
+        registry.addViewController("/fileupload").setViewName("fileupload");
     }
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(interceptor).addPathPatterns("/abc5");
+        registry.addInterceptor(interceptor).addPathPatterns("/fileupload");
     }
 
 }
