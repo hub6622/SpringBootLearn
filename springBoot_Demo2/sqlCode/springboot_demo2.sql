@@ -32,6 +32,20 @@ CREATE TABLE `t_book` (
 
 insert  into `t_book`(`book_id`,`book_name`,`book_author`,`book_code`) values (1,'5235','PPG',666888),(2,'我的奋斗','PPG',666888),(3,'tyryyt','fawa',666888),(4,'PPG666','fawa',666888);
 
+/*Table structure for table `t_file` */
+
+DROP TABLE IF EXISTS `t_file`;
+
+CREATE TABLE `t_file` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `file_name` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+/*Data for the table `t_file` */
+
+insert  into `t_file`(`id`,`file_name`) values (1,'1055px-Punishment_sisyph.jpg');
+
 /*Table structure for table `t_user` */
 
 DROP TABLE IF EXISTS `t_user`;

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>文件下载</title>
+</head>
+<body>
+<h1>文件下载列表</h1>
+<div th:if="${#lists.isEmpty(files)}">
+    <p>没有找到文件可供下载。</p>
+</div>
+<ul th:unless="${#lists.isEmpty(files)}">
+    <li th:each="file, iterStat : ${files}">
+        <a th:text="${file.fileName}" th:href="@{/file/downloadFile/{id}(id=${file.id})}">666</a>
+    </li>
+</ul>
+
+</body>
+</html>

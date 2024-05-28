@@ -6,7 +6,7 @@
 </head>
 <body>
     <div th:text="${bb}"></div>
-    <form th:action="@{/upload}" method="post" enctype="multipart/form-data">
+    <form th:action="@{/file/upload}" method="post" enctype="multipart/form-data">
         <input th:type="file" name="file"/>
         <input type="submit" value="上传"/>
     </form>
