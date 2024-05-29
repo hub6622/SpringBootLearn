@@ -3,10 +3,10 @@
 
 
 <mapper namespace="ppg.demo.mapper.FileMapper">
-    <insert id="addFile" parameterType="ppg.demo.pojo.UserFile">
-        insert into t_file(file_name)
-        select file_name from t_file
-        where not exists
-        (select * from t_file where file_name = #{fileName})
-    </insert>
+<!--    <insert id="addFile">-->
+<!--        insert into t_file(file_name)-->
+<!--        select file_name from t_file-->
+<!--        where not exists-->
+<!--        (select * from t_file where file_name = #{fileName})-->
+<!--    </insert>-->
 </mapper>

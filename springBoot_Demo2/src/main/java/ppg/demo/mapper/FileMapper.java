@@ -9,7 +9,7 @@ import java.util.List;
 
 @Mapper
 public interface FileMapper {
-//    @Insert("insert into t_file(file_name) values(#{fileName})")
+    @Insert("insert into t_file(file_name) values(#{fileName})")
     boolean addFile(String fileName);
 
     @Select("select * from t_file")
