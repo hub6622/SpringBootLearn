@@ -17,7 +17,7 @@ public class FileController {
     @Autowired
     FileService fileService;
 //    设置文件存放地址
-    private static final String FILE_PATH = "G:\\filefafa\\";
+    private static final String FILE_PATH = "D:\\filefafa\\";
     @PostMapping("/upload")
     public Result fileUpload(MultipartFile file) throws IOException {
         File file1 = new File(FILE_PATH+file.getOriginalFilename());

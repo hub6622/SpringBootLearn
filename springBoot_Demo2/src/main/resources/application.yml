@@ -4,12 +4,12 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://localhost:3306/springboot_demo2?serverTimezone=UTC&useSSL=true&useUnicode=true&characterEncoding=UTF-8
-#    username: root
-#    password: root
-    url: jdbc:mysql://localhost:3308/springboot_demo2?serverTimezone=UTC&useSSL=true&useUnicode=true&characterEncoding=UTF-8
-    username: text
-    password: 123456
+    url: jdbc:mysql://localhost:3306/springboot_demo2?serverTimezone=UTC&useSSL=true&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+#    url: jdbc:mysql://localhost:3308/springboot_demo2?serverTimezone=UTC&useSSL=true&useUnicode=true&characterEncoding=UTF-8
+#    username: text
+#    password: 123456
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       initial-size: 20
