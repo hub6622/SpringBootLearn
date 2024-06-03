@@ -20,11 +20,14 @@ public class FileController {
     private static final String FILE_PATH = "D:\\filefafa\\";
     @PostMapping("/upload")
     public Result fileUpload(MultipartFile file) throws IOException {
-        File file1 = new File(FILE_PATH+file.getOriginalFilename());
-        file.transferTo(file1);
-        System.out.println(file.getOriginalFilename());
-        fileService.addFile(file.getOriginalFilename());
-        return new Result("1","上传成功",null);
+        UserFile u = fileService.findByName(file.getOriginalFilename());
+        if(u==null){
+            File file1 = new File(FILE_PATH+file.getOriginalFilename());
+            file.transferTo(file1);
+            fileService.addFile(file.getOriginalFilename());
+            return new Result("1","上传成功",file.getOriginalFilename());
+        }
+        return new Result("1","上传失败，已有该文件",file.getOriginalFilename());
     }
     @GetMapping("/download")
     public ModelAndView fileDownLoad(){

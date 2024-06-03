@@ -10,4 +10,5 @@ public interface UserService {
     void insertUser(User user);
     User findUserById(Integer id);
     List<User> findUserBook();
+    User findPwdById(Integer id);
 }

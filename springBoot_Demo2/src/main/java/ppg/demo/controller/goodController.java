@@ -7,6 +7,8 @@ import org.springframework.web.multipart.MultipartFile;
 import ppg.demo.pojo.Result;
 import ppg.demo.pojo.User;
 import ppg.demo.service.UserService;
+import ppg.demo.utils.EncodeUtil;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -66,5 +68,23 @@ public class goodController {
         }
     }
 
+    @GetMapping("/encode/{Pwd}")
+    @ResponseBody
+    public Result encode(@PathVariable String Pwd){
+        EncodeUtil encodeUtil=new EncodeUtil();
+        String encodePwd = encodeUtil.Md5Encode(Pwd);
+        System.out.println(encodePwd);
+        return new Result("200","succeed",encodePwd);
+    }
+    @GetMapping("/confirm/{Pwd}")
+    @ResponseBody
+    public Result confirm(@PathVariable String Pwd){
+        EncodeUtil encodeUtil=new EncodeUtil();
+        System.out.println(encodeUtil.Md5Encode(Pwd));
+        if(encodeUtil.Md5Encode(Pwd).equals("d146f9632cb744368153ac9b83c0c974")){
 
+            return new Result("200","succeed",null);
+        }
+        return new Result("201","error",null);
+    }
 }

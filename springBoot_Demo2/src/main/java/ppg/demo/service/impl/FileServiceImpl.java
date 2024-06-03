@@ -26,4 +26,9 @@ public class FileServiceImpl implements FileService {
     public UserFile findById(Integer id) {
         return fileMapper.findById(id);
     }
+
+    @Override
+    public UserFile findByName(String originalFilename) {
+        return fileMapper.findByName(originalFilename);
+    }
 }

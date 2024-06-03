@@ -9,4 +9,6 @@ public interface FileService {
     List<UserFile> findAll();
 
     UserFile findById(Integer id);
+
+    UserFile findByName(String originalFilename);
 }
