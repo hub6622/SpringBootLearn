@@ -1,2 +1,6 @@
 # Project exclude paths
 /springboot_learn/target/
+/springBoot_Demo2/target/
+/.idea/
+/springMVCdemo/target/
+/mybatis_Learn/target/
