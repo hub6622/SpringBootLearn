@@ -6,8 +6,11 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.SignatureVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import ppg.demo.pojo.User;
+import ppg.demo.service.RedisService;
+import ppg.demo.service.impl.RedisServiceImpl;
 import ppg.demo.utils.JwtToken;
 
 @SpringBootTest
@@ -35,6 +38,13 @@ class SpringBootDemo2ApplicationTests {
         }catch (SignatureVerificationException e){
             e.printStackTrace();
         }
+    }
+    @Autowired
+    RedisService redisService;
+    @Test
+    void RedisConnect(){
+
+        redisService.connection();
     }
 
 }

@@ -1,27 +1,48 @@
+
+# 配置服务器端口
 server:
   port: 8886
 
+# Spring配置
 spring:
+  
+  # 数据源配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/springboot_demo2?serverTimezone=UTC&useSSL=true&useUnicode=true&characterEncoding=UTF-8
     username: root
     password: root
-#    url: jdbc:mysql://localhost:3308/springboot_demo2?serverTimezone=UTC&useSSL=true&useUnicode=true&characterEncoding=UTF-8
-#    username: text
-#    password: 123456
     type: com.alibaba.druid.pool.DruidDataSource
+    # Druid数据源特定配置
     druid:
       initial-size: 20
       min-idle: 10
       max-active: 100
+
+  # Servlet配置
   servlet:
     multipart:
+      # 文件上传最大大小
       max-file-size: 10MB
+      # 请求最大大小
       max-request-size: 50MB
+
+#   Redis配置
+  data:
+    redis:
+      port: 6379
+      host: 127.0.0.1
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
+          max-wait: -1ms
+
+# MyBatis配置
 mybatis:
   configuration:
+    # 自动将下划线命名转换为驼峰命名
     map-underscore-to-camel-case: true
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: ppg.demo.pojo
-
