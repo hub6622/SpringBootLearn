@@ -51,4 +51,9 @@ public class RedisServiceImpl implements RedisService {
         return redisTemplate.opsForHash().get(hashKey, field);
     }
 
+    @Override
+    public void append(String key, Object value) {
+        redisTemplate.opsForValue().append(key, (String) value);
+    }
+
 }

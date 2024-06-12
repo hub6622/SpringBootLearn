@@ -25,4 +25,5 @@ public interface RedisService {
     void putHash(String hashKey, String field, Object value);
 
     Object getFromHash(String hashKey, String field);
+    void append(String key, Object value);
 }

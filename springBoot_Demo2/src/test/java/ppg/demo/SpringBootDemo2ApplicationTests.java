@@ -8,6 +8,7 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.serializer.SerializationException;
 import ppg.demo.pojo.User;
 import ppg.demo.service.RedisService;
 import ppg.demo.service.impl.RedisServiceImpl;
@@ -43,8 +44,19 @@ class SpringBootDemo2ApplicationTests {
     RedisService redisService;
     @Test
     void RedisConnect(){
-
         redisService.connection();
+    }
+    @Test
+    void appendRedis(){
+        redisService.append("test","test1");
+        redisService.append("test","test2");
+        try{
+            String value = (String) redisService.getValue("test");
+            System.out.println(value);
+        }catch (SerializationException e){
+            e.printStackTrace();
+        }
+        redisService.deleteValue("test");
     }
 
 }
